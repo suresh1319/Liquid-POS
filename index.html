@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restaurant Management System</title>
+
+    <link href="styles.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Explicit favicon to prevent /favicon.ico 500s -->
+    <link rel="icon" href='data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"><rect width="64" height="64" rx="12" fill="%23ffffff"/><path d="M12 28h40v22a4 4 0 0 1-4 4H16a4 4 0 0 1-4-4V28z" fill="%23ef4444"/><path d="M10 26l4-10h36l4 10H10z" fill="%23f87171"/><rect x="20" y="34" width="12" height="20" rx="2" fill="%23ffffff"/></svg>' />
+
+    <!-- We will keep phosphor-icons and modern-screenshot for now -->
+    <!-- Add modern-screenshot for screenshotting -->
+    <script type="module" src="https://unpkg.com/modern-screenshot"></script>
+    <!-- Add html2canvas as fallback for screenshot functionality -->
+    <script src="https://unpkg.com/html2canvas@1.4.1/dist/html2canvas.min.js" onload="console.log('html2canvas loaded successfully')" onerror="console.error('Failed to load html2canvas')"></script>
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    
+    <!-- QR Code Generation Library - Multiple sources for reliability -->
+    <script src="https://unpkg.com/qrcode@1.5.3/build/qrcode.min.js" onerror="this.onerror=null; this.src='https://cdn.jsdelivr.net/npm/qrcode@1.5.3/build/qrcode.min.js'"></script>
+
+    <!-- SheetJS for Excel Export -->
+    <script src="https://unpkg.com/xlsx@0.18.5/dist/xlsx.full.min.js" onerror="this.onerror=null; this.src='https://cdn.jsdelivr.net/npm/xlsx@0.18.5/dist/xlsx.full.min.js'"></script>
+
+    <!-- Shopto SDK -->
+    <script src="https://shopto.app/sdk/dist/sdk.v0.1.0.min.js"></script>
+    <!-- <script src="http://localhost:3000/sdk/dist/sdk.v0.1.0.min.js"></script>  -->
+</head>
+
+<body>
+    <div id="root">
+        <!-- Loading Screen -->
+        <div id="loading-screen" class="fixed inset-0 flex flex-col items-center justify-center bg-white z-50">
+            <div class="mb-4">
+                <i class="ph ph-storefront text-5xl text-primary animate-pulse"></i>
+            </div>
+            <h1 class="text-xl font-semibold text-dark mb-2">Shopto POS</h1>
+            <p class="text-light text-sm mb-4">Loading your store...</p>
+            <div class="w-48 h-1.5 bg-gray-200 rounded-full overflow-hidden">
+                <div id="loading-progress" class="h-full bg-primary rounded-full transition-all duration-300"
+                    style="width: 10%"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- The single entry point for our app -->
+    <script type="module" src="./js/main.js"></script>
+</body>
+
+</html>

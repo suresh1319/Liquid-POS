@@ -1,0 +1,50 @@
+Use Phosphor Icons library for all icons (prefix: ph ph-*)
+For missing images, use semantic Phosphor icons (ph ph-user, ph ph-storefront, ph ph-image)
+Avoid NPM package dependencies - instead, load JavaScript libraries directly from trusted CDNs using script tags in the HTML.
+Polish the ui and make it look more calm, pleasant and professional.
+Make only relevant and accurate information if they are useful don't over engineer any stuff, and if you think it can improve the overall experience, then only add things, but it should must be accurate information from the database.
+
+# Git Workflow Safety Rules
+- Always pull the latest changes before starting work: `git pull origin development`
+- Never commit directly to main or development branches
+- Create feature branches from development branch using: `git checkout -b feature-[descriptive-name] development`
+- Commit frequently with clear messages describing what you changed
+- Before pushing, always pull the latest changes: `git pull origin development`
+- If you encounter merge conflicts, ask for help immediately
+- Push your feature branch to remote: `git push -u origin feature-[descriptive-name]`
+- When your feature is complete, create a pull request from your feature branch to development
+- Never force push unless specifically instructed by a senior developer
+
+# Git Branching Strategy
+- We use three types of branches:
+  - `main`: Production code (NEVER commit directly)
+  - `development`: Integration branch (NEVER commit directly)
+  - `feature-*`: Working branches (create from development)
+- Branch protection is enabled:
+  - Direct pushes to `main` and `development` are blocked
+  - Changes to these branches require pull requests
+  - Pull requests require at least one review approval
+
+# Git Workflow for Interns
+1. Start your day by updating development: `git checkout development && git pull origin development`
+2. Create your feature branch: `git checkout -b feature-your-feature-name development`
+3. Make your code changes
+4. Commit changes with clear messages
+5. Before pushing, update with latest changes: `git pull origin development`
+6. Push your branch: `git push -u origin feature-your-feature-name`
+7. Create a pull request on GitHub from your feature branch to development
+
+# Common Git Mistakes to Avoid
+- Working directly on main or development branches
+- Force pushing (`git push -f`)
+- Merging branches locally instead of using pull requests
+- Ignoring merge conflicts
+- Committing large files or sensitive information
+
+# Example Git Prompts for Cursor AI
+- "Create a new feature branch called feature-login-page from development"
+- "Commit my changes with message 'Add login form validation'"
+- "Push my feature branch to remote"
+- "Show me what files I've changed"
+- "How do I resolve these merge conflicts?"
+- "Update my feature branch with latest changes from development"

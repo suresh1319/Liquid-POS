@@ -1,0 +1,204 @@
+/* Force half-page width for customer details modal on desktop */
+.custom-half-width {
+    max-width: 50vw !important;
+    width: 50vw !important;
+}
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: #f5f5f7;
+}
+
+.active-tab {
+    color: #FF5A5F;
+    border-bottom: 2px solid #FF5A5F;
+}
+
+.card {
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Add styles for the scrollable tab bar */
+.scroll-tabs {
+    -webkit-overflow-scrolling: touch;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+.scroll-tabs::-webkit-scrollbar {
+    display: none;
+}
+
+/* Category slider arrow styles */
+.category-slider-arrow {
+    z-index: 10;
+    transition: opacity 0.2s ease-in-out, background-color 0.2s ease-in-out;
+}
+
+.category-slider-arrow:hover {
+    background-color: #f9fafb;
+}
+
+.category-slider-arrow:active {
+    background-color: #f3f4f6;
+}
+
+.tab-indicator {
+    position: absolute;
+    bottom: 0;
+    height: 2px;
+    background-color: #2563eb;
+    transition: all 0.3s ease;
+}
+
+/* Very small text size for mobile */
+.text-2xs {
+    font-size: 0.65rem;
+    line-height: 1rem;
+}
+
+/* Slide-in animations for modals */
+@keyframes slideInRight {
+    from {
+        transform: translateX(100%);
+    }
+
+    to {
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideInBottom {
+    from {
+        transform: translateY(100%);
+    }
+
+    to {
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideUp {
+    from {
+        transform: translateY(100%);
+    }
+
+    to {
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* AI Chat Bubble styles */
+.ai-chat-bubble {
+    animation: fadeIn 0.3s ease-out, pulse 2s infinite ease-in-out;
+    transition: transform 0.2s ease-out;
+}
+
+.ai-chat-bubble:hover {
+    transform: scale(1.05);
+}
+
+@keyframes pulse {
+    0% {
+        box-shadow: 0 0 0 0 rgba(59, 130, 246, 0.4);
+    }
+    70% {
+        box-shadow: 0 0 0 10px rgba(59, 130, 246, 0);
+    }
+    100% {
+        box-shadow: 0 0 0 0 rgba(59, 130, 246, 0);
+    }
+}
+
+/* Mobile-specific styles */
+@media (max-width: 767px) {
+    .mobile-bottom-sheet {
+        border-top-left-radius: 16px;
+        border-top-right-radius: 16px;
+        box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.1);
+    }
+
+    .mobile-drag-handle {
+        width: 40px;
+        height: 5px;
+        background-color: #E5E7EB;
+        border-radius: 3px;
+        margin: 8px auto;
+    }
+}
+
+/* Desktop-specific styles */
+@media (min-width: 768px) {
+    .desktop-slide-in {
+        animation: slideInRight 0.3s ease-out;
+        box-shadow: -4px 0 20px rgba(0, 0, 0, 0.1);
+    }
+}
+
+/* Smooth transitions */
+.transition-transform {
+    transition: transform 0.3s ease-out;
+}
+
+.transition-opacity {
+    transition: opacity 0.3s ease-out;
+}
+
+/* Improved scrollbars */
+.custom-scrollbar {
+    scrollbar-width: thin;
+    scrollbar-color: #CBD5E0 #F7FAFC;
+}
+
+.custom-scrollbar::-webkit-scrollbar {
+    width: 6px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+    background: #F7FAFC;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+    background-color: #CBD5E0;
+    border-radius: 3px;
+}
+
+/* Animation keyframes */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.animate-fadeIn {
+    animation: fadeIn 0.3s ease-out;
+}

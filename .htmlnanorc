@@ -1,0 +1,16 @@
+{
+    "collapseWhitespace": true,
+    "removeComments": true,
+    "minifyCSS": true,
+    "minifyJS": true,
+    "removeRedundantAttributes": true,
+    "removeEmptyAttributes": true,
+    "removeOptionalTags": false,
+    "collapseAttributeWhitespace": true,
+    "conservativeCollapse": true,
+    "processConditionalComments": true,
+    "sortAttributes": true,
+    "sortClassName": true,
+    "removeAttributeQuotes": false,
+    "minifyURLs": true
+}
